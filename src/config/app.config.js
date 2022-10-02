@@ -3,11 +3,11 @@ const crypto = require("crypto");
 const AppConfig = {};
 
 AppConfig.MySQLServer = {
-    Host: "127.0.0.1",
-    Username: "root",
-    Password: "",
+    Host: "sql6.freesqldatabase.com",
+    Username: "sql6523726",
+    Password: "KWqymLQ2SX",
     Database: {
-        Safar: "Safar"
+        Safar: "sql6523726"
     }
 }
 
