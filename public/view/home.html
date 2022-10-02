@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" href="/public/image/logo.2.png" type="image/png">
+    <link rel="stylesheet" type="text/css" media="screen" href="/public/icon/fontawesome-6.0.0/css/all.min.css" />
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="/public/style/ly.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/public/style/app.css" />
+    
+    <title>Home</title>
+</head>
+<body class="ly-property-image" style="background-image: url(/public/image/img2.png);">
+
+
+    <div class="app ly-table ly-table-row">
+        <div class="app-title">
+            <label onclick="App.ToggleMenu('.-tab-home', '.-tab-menu');">Safar</label>
+        </div>
+        <div class="app-tab app-panel-border-trl app-tab-slider">
+
+
+            <div class="-tab-home app-panel-stack --tab-slide" style="left: 0%;">
+                <div class="--tab-title app-panel">
+                    <label>Home</label>
+                    <button class="fa fa-map-marker ly-property-reset" onclick="AppAPI.GetUserLocation(true);"></button>
+                </div>
+                <div class="app-search app-panel">
+                    <div class="ly-table ly-table-column">
+                        <input type="text" class="app-search-textbox app-control" placeholder="Search Place" id="_appSearchBox" />
+                        <select class="app-search-select app-control" id="_appStateSelect">
+                            <option value="NULL">Select State</option>
+                        </select>
+                    </div>
+                    <button class="app-search-button app-control" onclick="App.Search();">Search</button>
+                </div>
+
+                <div class="--tab-title app-panel">
+                    <label>States</label>
+                </div>
+                <div class="app-card app-panel">
+
+                    <div class="--card-vertical" id="_appStateCard"></div>
+
+                </div>
+
+
+                <div class="--tab-title app-panel">
+                    <label>Places</label>
+                </div>
+                <div class="app-card app-panel">
+
+                    <div class="--card-vertical" id="_appSearchResult"></div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="-tab-menu app-panel-stack --tab-slide" style="left: -100%;">
+
+                <div class="--tab-title app-panel" onclick="App.ToggleMenu('.-tab-home', '.-tab-menu');">
+                    <label>Menu</label>
+                </div>
+                <div class="--tab-title app-panel" onclick="App.ToggleMenu('.-tab-home', '.-tab-menu');">
+                    <label>Home</label>
+                </div>
+                <div class="--tab-title app-panel" onclick="window.location.href = '/search';">
+                    <label>Search</label>
+                </div>
+                <div class="--tab-title app-panel" id="_appUserRedirect" onclick="window.location.href = '/user';">
+                    <label>User</label>
+                </div>
+                <div class="--tab-title app-panel" onclick="window.location.href = '/about';">
+                    <label>About</label>
+                </div>
+                <div class="--tab-title app-panel"" onclick="window.location.href = '/contact';">
+                    <label>Contact</label>
+                </div>
+                <div class="--tab-title app-panel" id="_appLoginRedirect" onclick="window.location.href = '/auth';">
+                    <label>Login</label>
+                </div>
+                <div class="--tab-title app-panel" id="_appLogoutRedirect" onclick="AppAPI.Logout();">
+                    <label>Logout</label>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+    
+</body>
+</html>
+<script src="/public/script/ly.js"></script>
+<script src="/public/script/jquery-3.6.1.min.js"></script>
+<script src="/public/script/app.js"></script>
+<script src="/public/script/app.api.js"></script>
+<script>
+
+    App.LoadStateCard();
+    AppAPI.GetRandomPlace();
+    App.LoadStateList();
+    AppAPI.CheckUser();
+
+</script>

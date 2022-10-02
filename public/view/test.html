@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/public/image/logo.2.png" type="image/png">
+    <title>Test</title>
+    <style>
+        button { display: block; margin-bottom: 6px; }
+    </style>
+</head>
+<body>
+
+    <h1>API Testing</h1>
+    
+    <button onclick="login();">login</button>
+    <button onclick="logout();">logout</button>
+    
+    <button onclick="signup();">signup</button>
+    <button onclick="placesearch();">place search</button>
+    <button onclick="placeget();">place get</button>
+    <button onclick="userget();">user get</button>
+    <button onclick="userphoto();">user photo</button>
+    <button onclick="reviewlist();">review get</button>
+
+    <input id="fileupload" type="file" name="fileupload" />
+    <button id="upload-button" onclick="uploadFile()">update profile picture</button>
+
+</body>
+</html>
+<script src="/public/script/ly.js"></script>
+<script>
+
+async function uploadFile() {
+    let formData = new FormData(); 
+    formData.append("detail", "name");
+    formData.append("fileupload", fileupload.files[0]);
+        await fetch('/api/user/photo/upload', {
+        method: "POST", 
+        body: formData
+    }); 
+}
+async function login() {
+    try {
+        await Ly.Http.GetJson("/api/auth/login", { username: "user1", password: "pass1" });
+    }
+    catch(ex) {
+        console.log(ex);
+    }
+}
+async function logout() {
+    try {
+        await Ly.Http.GetJson("/api/auth/logout");
+    }
+    catch(ex) {
+        console.log(ex);
+    }
+}
+
+async function signup() {
+    try {
+        await Ly.Http.GetJson("/api/auth/signup", { name: "name1", username: "user21", password: "pass1", email: "email1", gender: "gender1" });
+        //await Ly.Http.FetchJson("/api/signup", { name: "name2", username: "user2", password: "pass1", email: "email2", gender: "gender1" });
+        //await Ly.Http.FetchJson("/api/signup", { name: "name2", username: "user3", password: "pass1", email: "email2", gender: "gender1" });
+    }
+    catch(ex) {
+        console.log(ex);
+    }
+}
+
+async function placesearch() {
+    try {
+        await Ly.Http.FetchJson("/api/place/search", { name: "place2" });
+        await Ly.Http.FetchJson("/api/place/search", { city: "city1" });
+        await Ly.Http.FetchJson("/api/place/search", { state: "state1" });
+
+        await Ly.Http.FetchJson("/api/place/search", { name: "place1", city: "city1" });
+        await Ly.Http.FetchJson("/api/place/search", { city: "city1", state: "state1" });
+        await Ly.Http.FetchJson("/api/place/search", { name: "place1", state: "state1" });
+
+        await Ly.Http.FetchJson("/api/place/search", { name: "place1", city: "city1", state: "state1" });
+
+        await Ly.Http.FetchJson("/api/place/search");
+    }
+    catch(ex) {
+        console.log(ex);
+    }
+}
+async function placeget() {
+    try {
+        await Ly.Http.FetchJson("/api/place/get", { id: 1 });
+        await Ly.Http.FetchJson("/api/place/get", { id: 2 });
+    }
+    catch(ex) {
+        console.log(ex);
+    }
+}
+async function userget() {
+    try {
+        await Ly.Http.FetchJson("/api/user/get", { id: 5 });
+        await Ly.Http.FetchJson("/api/user/get", { id: 2 });
+    }
+    catch(ex) {
+        console.log(ex);
+    }
+}
+async function userphoto() {
+    try {
+        await Ly.Http.FetchJson("/api/user/photo/list", { id: 5 });
+        await Ly.Http.FetchJson("/api/user/photo/list", { id: 4 });
+        await Ly.Http.FetchJson("/api/user/photo/list", { id: 2 });
+    }
+    catch(ex) {
+        console.log(ex);
+    }
+}
+
+async function reviewlist() {
+    try {
+        await Ly.Http.FetchJson("/api/review/list", { id: 1 });
+        await Ly.Http.FetchJson("/api/review/list", { id: 2 });
+    }
+    catch(ex) {
+        console.log(ex);
+    }
+}
+
+</script>

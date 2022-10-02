@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/public/image/logo.2.png" type="image/png">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/public/icon/fontawesome-6.0.0/css/all.min.css" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/public/style/ly.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/public/style/app.css" />
+    
+    <title>User</title>
+</head>
+<body class="ly-property-image" style="background-image: url(/public/image/img2.png);">
+
+
+    <div class="app ly-table ly-table-row">
+        <div class="app-title">
+            <label onclick="App.ToggleMenu('.-tab-user', '.-tab-menu');">Safar</label>
+        </div>
+        <div class="app-tab app-panel-border-trl app-tab-slider">
+
+
+
+            <div class="-tab-user app-panel-stack --tab-slide" style="left: 0%;">
+                <div class="app-panel" style="text-align: center;">
+                    <div class="app-user-image ly-property-image" id="_appUserImage"></div>
+                </div>
+                
+                <div class="--tab-title app-panel" style="padding-top: 8px; text-align: center;">
+                    <label id="_appUserName">name</label>
+                </div>
+
+                <div class="--tab-title app-panel">
+                    <label>Update Profile Picture</label>
+                </div>
+                <div class="app-panel" style="padding-top: 8px;">
+                    <input type="file" accept="image/*" style="margin-bottom: 8px;" id="fileupload" name="fileupload" />
+                    <button class="app-control" style="width: 80px;" onclick="AppAPI.UpdateUserImage();">Upload</button>
+                </div>
+
+                <div class="--tab-title app-panel">
+                    <label>Delete Profile</label>
+                </div>
+                <div class="app-panel" style="padding-top: 8px;">
+                    <button class="app-control" style="width: 80px;" onclick="AppAPI.UserRemove();">Delete</button>
+                </div>
+
+            </div>
+
+
+
+            <div class="-tab-menu app-panel-stack --tab-slide" style="left: -100%;">
+
+                <div class="--tab-title app-panel" onclick="App.ToggleMenu('.-tab-user', '.-tab-menu');">
+                    <label>Menu</label>
+                </div>
+                <div class="--tab-title app-panel" onclick="window.location.href = '/home';">
+                    <label>Home</label>
+                </div>
+                <div class="--tab-title app-panel" onclick="window.location.href = '/search';">
+                    <label>Search</label>
+                </div>
+                <div class="--tab-title app-panel" id="_appUserRedirect" onclick="App.ToggleMenu('.-tab-user', '.-tab-menu');">
+                    <label>User</label>
+                </div>
+                <div class="--tab-title app-panel" onclick="window.location.href = '/about';">
+                    <label>About</label>
+                </div>
+                <div class="--tab-title app-panel"" onclick="window.location.href = '/contact';">
+                    <label>Contact</label>
+                </div>
+                <div class="--tab-title app-panel" id="_appLoginRedirect" onclick="window.location.href = '/auth';">
+                    <label>Login</label>
+                </div>
+                <div class="--tab-title app-panel" id="_appLogoutRedirect" onclick="AppAPI.Logout();">
+                    <label>Logout</label>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+    
+</body>
+</html>
+<script src="/public/script/ly.js"></script>
+<script src="/public/script/jquery-3.6.1.min.js"></script>
+<script src="/public/script/app.js"></script>
+<script src="/public/script/app.api.js"></script>
+<script>
+
+    async function init() {
+        await AppAPI.CheckUser("/auth");
+        await AppAPI.LoadUserDetail("/auth");
+    };
+    init();
+
+</script>

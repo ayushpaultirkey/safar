@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/public/image/logo.2.png" type="image/png">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/public/icon/fontawesome-6.0.0/css/all.min.css" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/public/style/ly.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/public/style/app.css" />
+    
+    <title>Signup</title>
+</head>
+<body class="ly-property-image" style="background-image: url(/public/image/sky.jpeg);">
+
+
+    <div class="app ly-table ly-table-row">
+        <div class="app-title" ly-query="load.fragment /public/fragment/header.html"></div>
+        <div class="app-tab app-panel-border-trl">
+
+
+            <div class="-tab-auth-signup app-panel-stack">
+                <div class="--tab-title app-panel">
+
+                    <label>Register</label>
+                    <div class="-tab-detail">
+                        <label id="_appTabMessage">Wrong username or password</label>
+                    </div>
+
+                </div>
+                <div class="auth-panel app-panel">
+                    <input class="app-control" type="text" placeholder="Name" />
+                    <input class="app-control" type="text" placeholder="Username" />
+                    <input class="app-control" type="password" placeholder="Password" />
+                    <select class="app-control" id="_appStateSelect">
+                        <option value="NULL">Select State</option>
+                    </select>
+                    <button class="app-control">Register</button>
+                    <label><b>Already have an account<br>Login</b></label>
+                    <button class="app-control" style="margin-top: 6px;" onclick="window.location.href = '/login';">Login</button>
+                </div>
+            </div>
+
+
+            <div class="-tab-menu app-panel-stack" ly-query="load.fragment /public/fragment/menu.html" style="display: none;"></div>
+
+
+        </div>
+    </div>
+
+    
+</body>
+</html>
+<script src="/public/script/ly.js"></script>
+<script src="/public/script/jquery-3.6.1.min.js"></script>
+<script src="/public/script/app.js"></script>
+<script>
+
+
+    //Load state list
+    App.LoadStateList();
+
+
+</script>

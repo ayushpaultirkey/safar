@@ -1,0 +1,18 @@
+{
+    "short_name": "Safar",  
+    "name": "Safar",  
+    "description": "Safar app",
+    "theme_color": "#eb5252",  
+    "background_color": "#000000",  
+    "display": "fullscreen",  
+    "Scope": "/",
+    "orientation": "portrait",  
+    "icons": [    
+        {
+            "src": "/public/image/logo.2.png",      
+            "type": "image/png",      
+            "sizes": "256x256"
+        }
+    ],  
+    "start_url": "home"
+}

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/public/image/logo.2.png" type="image/png">
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="/public/icon/fontawesome-6.0.0/css/all.min.css" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/public/style/ly.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/public/style/app.css" />
+    
+    <title>Home</title>
+</head>
+<body class="ly-property-image" style="background-image: url(/public/image/img2.png);">
+
+
+    <div class="app ly-table ly-table-row">
+        <div class="app-title">
+            <label onclick="Tab.ChangeTab('.-tab-menu', '.app-tab > div');">Safar</label>
+        </div>
+        <div class="app-tab app-panel-border-trl">
+
+
+            <div class="-tab-auth-login" style="display: none;">
+                <div class="--tab-title app-panel">
+                    <label>Login</label>
+                </div>
+                <div class="auth-panel app-panel">
+                    <input class="app-control" type="text" placeholder="Username" />
+                    <input class="app-control" type="password" placeholder="Password" />
+                    <button class="app-control">Login</button>
+                    <label><b>Don't have an account<br>Register</b></label>
+                    <button class="app-control" style="margin-top: 6px;">Register</button>
+                </div>
+            </div>
+
+
+
+            <div class="-tab-auth-signup" style="display: none;">
+                <div class="--tab-title app-panel">
+                    <label>Register</label>
+                </div>
+                <div class="auth-panel app-panel">
+                    <input class="app-control" type="text" placeholder="Name" />
+                    <input class="app-control" type="text" placeholder="Username" />
+                    <input class="app-control" type="password" placeholder="Password" />
+                    <select class="app-control">
+                        <option>Select State</option>
+                    </select>
+                    <button class="app-control">Signup</button>
+                    <label><b>Already have an account<br>Login</b></label>
+                    <button class="app-control" style="margin-top: 6px;">Login</button>
+                </div>
+            </div>
+
+
+
+            <div class="-tab-home app-panel-stack" style="display: block;">
+                <div class="--tab-title app-panel">
+                    <label>Home</label>
+                    <button class="fa fa-map-marker ly-property-reset"></button>
+                </div>
+                <div class="app-search app-panel">
+                    <div class="ly-table ly-table-column">
+                        <input type="text" class="app-search-textbox app-control" placeholder="Search Place" />
+                        <select class="app-search-select app-control">
+                            <option>Select State</option>
+                        </select>
+                    </div>
+                    <button class="app-search-button app-control">Search</button>
+                </div>
+
+                <div class="--tab-title app-panel">
+                    <label>States</label>
+                </div>
+                <div class="app-card app-panel">
+
+                    <div class="--card-vertical">
+
+                        <div class="app-card-vertical ly-table ly-table-row app-control" onclick="Tab.ChangeTab('.-tab-place', '.app-tab > div');">
+                            <div class="app-card-image ly-property-image" style="background-image: url(/public/image/bluelupin.glow.new.jpg);"></div>
+                            <div>
+                                <label>Name</label>
+                                <label>Detail</label>
+                            </div>
+                        </div>
+                        <div class="app-card-vertical ly-table ly-table-row app-control">
+                            <div class="app-card-image ly-property-image" style="background-image: url(/public/image/bluelupin.glow.new.jpg);"></div>
+                            <div>
+                                <label>Name</label>
+                                <label>Detail</label>
+                            </div>
+                        </div>
+                        <div class="app-card-vertical ly-table ly-table-row app-control">
+                            <div class="app-card-image ly-property-image" style="background-image: url(/public/image/bluelupin.glow.new.jpg);"></div>
+                            <div>
+                                <label>Name</label>
+                                <label>Detail</label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="--tab-title app-panel">
+                    <label>Places</label>
+                </div>
+                <div class="app-card app-panel">
+
+                    <div class="--card-vertical">
+
+                        <div class="app-card-vertical ly-table ly-table-row app-control">
+                            <div class="app-card-image ly-property-image" style="background-image: url(/public/image/bluelupin.glow.new.jpg);"></div>
+                            <div>
+                                <label>Name</label>
+                                <label>Detail</label>
+                                <label>City</label>
+                            </div>
+                        </div>
+                        <div class="app-card-vertical ly-table ly-table-row app-control">
+                            <div class="app-card-image ly-property-image" style="background-image: url(/public/image/bluelupin.glow.new.jpg);"></div>
+                            <div>
+                                <label>Name</label>
+                                <label>Detail</label>
+                                <label>City</label>
+                            </div>
+                        </div>
+                        <div class="app-card-vertical ly-table ly-table-row app-control">
+                            <div class="app-card-image ly-property-image" style="background-image: url(/public/image/bluelupin.glow.new.jpg);"></div>
+                            <div>
+                                <label>Name</label>
+                                <label>Detail</label>
+                                <label>City</label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            
+            <div class="-tab-search app-panel-stack" style="display: none;">
+                <div class="--tab-title app-panel">
+                    <label>Search</label>
+                    <button class="fa fa-map-marker ly-property-reset"></button>
+                </div>
+                <div class="app-search app-panel">
+                    <div class="ly-table ly-table-column">
+                        <input type="text" class="app-search-textbox app-control" placeholder="Search Place" />
+                        <select class="app-search-select app-control">
+                            <option>Select State</option>
+                        </select>
+                    </div>
+                    <button class="app-search-button app-control">Search</button>
+                </div>
+
+                <div class="--tab-title app-panel">
+                    <label>Bhopal</label>
+                </div>
+                <div class="app-card app-panel">
+
+                    <div class="--card-vertical">
+
+                        <div class="app-card-vertical ly-table ly-table-row app-control">
+                            <div class="app-card-image ly-property-image" style="background-image: url(/public/image/bluelupin.glow.new.jpg);"></div>
+                            <div>
+                                <label>Name</label>
+                                <label>Detail</label>
+                                <label>City</label>
+                            </div>
+                        </div>
+                        <div class="app-card-vertical ly-table ly-table-row app-control">
+                            <div class="app-card-image ly-property-image" style="background-image: url(/public/image/bluelupin.glow.new.jpg);"></div>
+                            <div>
+                                <label>Name</label>
+                                <label>Detail</label>
+                                <label>City</label>
+                            </div>
+                        </div>
+                        <div class="app-card-vertical ly-table ly-table-row app-control">
+                            <div class="app-card-image ly-property-image" style="background-image: url(/public/image/bluelupin.glow.new.jpg);"></div>
+                            <div>
+                                <label>Name</label>
+                                <label>Detail</label>
+                                <label>City</label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="-tab-place app-panel-stack" style="display: none;">
+                <div class="--tab-title app-panel">
+                    <label>Bhopal</label>
+                    <button class="fa fa-map ly-property-reset"></button>
+                    <div class="--tab-detail">
+                        <label>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi, praesentium? Quibusdam, eaque debitis quis mollitia amet molestias, sit odio, laudantium explicabo quae nam. In nesciunt reprehenderit aliquam dolores fugiat non?</label>
+                    </div>
+                </div>
+
+                <div class="--tab-title app-panel">
+                    <label>Photo</label>
+                    <button class="fa fa-add ly-property-reset"></button>
+                </div>
+                <div class="app-card app-panel">
+
+                    <div class="--card-vertical">
+
+                        <div class="app-card-vertical ly-table ly-table-row app-control">
+                            <div class="app-card-image ly-property-image" style="background-image: url(/public/image/bluelupin.glow.new.jpg);"></div>
+                        </div>
+                        <div class="app-card-vertical ly-table ly-table-row app-control">
+                            <div class="app-card-image ly-property-image" style="background-image: url(/public/image/bluelupin.glow.new.jpg);"></div>
+                        </div>
+                        <div class="app-card-vertical ly-table ly-table-row app-control">
+                            <div class="app-card-image ly-property-image" style="background-image: url(/public/image/bluelupin.glow.new.jpg);"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="--tab-title app-panel">
+                    <label>Map</label>
+                </div>
+                <div class="app-map app-panel">
+                    <div>a</div>
+                </div>
+
+            </div>
+
+
+
+            <div class="-tab-user app-panel-stack" style="display: none;">
+                <div class="app-panel" style="text-align: center;">
+                    <div class="app-user-image"></div>
+                </div>
+                
+                <div class="--tab-title app-panel" style="padding-top: 8px; text-align: center;">
+                    <label>name</label>
+                </div>
+
+                <div class="--tab-title app-panel">
+                    <label>Update Profile Picture</label>
+                </div>
+                <div class="app-panel" style="padding-top: 8px;">
+                    <button class="app-control" style="width: 80px;">Upload</button>
+                </div>
+
+                <div class="--tab-title app-panel">
+                    <label>Delete Profile</label>
+                </div>
+                <div class="app-panel" style="padding-top: 8px;">
+                    <button class="app-control" style="width: 80px;">Delete</button>
+                </div>
+
+            </div>
+
+
+
+            <div class="-tab-menu app-panel-stack" style="display: none;">
+
+                <div class="--tab-title app-panel">
+                    <label>Menu</label>
+                </div>
+                <div class="--tab-title app-panel" onclick="Tab.ChangeTab('.-tab-home', '.app-tab > div');">
+                    <label>Home</label>
+                </div>
+                <div class="--tab-title app-panel" onclick="Tab.ChangeTab('.-tab-search', '.app-tab > div');">
+                    <label>Search</label>
+                </div>
+                <div class="--tab-title app-panel" onclick="Tab.ChangeTab('.-tab-user', '.app-tab > div');">
+                    <label>User</label>
+                </div>
+                <div class="--tab-title app-panel" onclick="Tab.ChangeTab('.-tab-about', '.app-tab > div');">
+                    <label>About</label>
+                </div>
+                <div class="--tab-title app-panel" onclick="Tab.ChangeTab('.-tab-contact', '.app-tab > div');">
+                    <label>Contact</label>
+                </div>
+                <div class="--tab-title app-panel" onclick="Tab.ChangeTab('.-tab-contact', '.app-tab > div');">
+                    <label>Logout</label>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+    
+</body>
+</html>
+<script src="/public/script/jquery-3.6.1.min.js"></script>
+<script>
+
+
+    const Tab = {
+        ChangeTab: function(_element, _tabs) {
+
+            var _tab = document.querySelectorAll(_tabs);
+            var _el = document.querySelector(_element);
+
+            _tab.forEach(x => {
+
+                if(x !== _el) {
+                    x.style.display = "none";
+                }
+                else {
+                    _el.style.display = "block";
+                };
+
+            });
+
+        }
+    };
+
+
+</script>
